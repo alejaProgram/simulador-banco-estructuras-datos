@@ -3,7 +3,6 @@ using System;
 
 namespace Estructuras
 {
-    // TODO: Salo debe implementar esta clase
     public class ColaAtencion
     {
         private NodoCola frente;
@@ -22,30 +21,25 @@ namespace Estructuras
 
         public void Encolar(Cliente cliente)
         {
-            // Implementación pendiente - Salo
         }
 
         public Cliente Desencolar()
         {
-            // Implementación pendiente - Salo
             return null;
         }
 
         public Cliente VerSiguiente()
         {
-            // Implementación pendiente - Salo
             return null;
         }
 
         public int ContarClientesEnCola()
         {
-            // Implementación pendiente - Salo
             return 0;
         }
 
         public Cliente[] ObtenerClientesEnCola()
         {
-            // Implementación pendiente - Salo
             return null;
         }
     }

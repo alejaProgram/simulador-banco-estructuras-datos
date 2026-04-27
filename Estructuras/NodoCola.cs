@@ -2,7 +2,6 @@ using Entidades;
 
 namespace Estructuras
 {
-    // TODO: Salo debe implementar esta clase
     public class NodoCola
     {
         public Cliente Cliente { get; set; }

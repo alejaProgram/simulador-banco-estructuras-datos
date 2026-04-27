@@ -85,10 +85,8 @@ namespace Interfaz
             }
         }
 
-        // TODO: Aleja debe implementar estas opciones (parte 1)
         private void OpcionRegistrarCliente()
         {
-            // Implementación pendiente - Commit 17
             Console.WriteLine("Opción en desarrollo...");
             Console.WriteLine("Presione Enter para continuar...");
             Console.ReadLine();
@@ -96,7 +94,6 @@ namespace Interfaz
 
         private void OpcionListarClientes()
         {
-            // Implementación pendiente - Commit 18
             Console.WriteLine("Opción en desarrollo...");
             Console.WriteLine("Presione Enter para continuar...");
             Console.ReadLine();
@@ -104,16 +101,12 @@ namespace Interfaz
 
         private void OpcionBuscarCliente()
         {
-            // Implementación pendiente - Commit 19
             Console.WriteLine("Opción en desarrollo...");
             Console.WriteLine("Presione Enter para continuar...");
             Console.ReadLine();
         }
-
-        // TODO: Salo debe implementar estas opciones (parte 2)
         private void OpcionAgregarACola()
         {
-            // Implementación pendiente - Salo
             Console.WriteLine("Opción en desarrollo...");
             Console.WriteLine("Presione Enter para continuar...");
             Console.ReadLine();
@@ -121,7 +114,6 @@ namespace Interfaz
 
         private void OpcionAtenderSiguiente()
         {
-            // Implementación pendiente - Salo
             Console.WriteLine("Opción en desarrollo...");
             Console.WriteLine("Presione Enter para continuar...");
             Console.ReadLine();
@@ -129,7 +121,6 @@ namespace Interfaz
 
         private void OpcionRealizarDeposito()
         {
-            // Implementación pendiente - Salo
             Console.WriteLine("Opción en desarrollo...");
             Console.WriteLine("Presione Enter para continuar...");
             Console.ReadLine();
@@ -137,7 +128,6 @@ namespace Interfaz
 
         private void OpcionRealizarRetiro()
         {
-            // Implementación pendiente - Salo
             Console.WriteLine("Opción en desarrollo...");
             Console.WriteLine("Presione Enter para continuar...");
             Console.ReadLine();
@@ -145,7 +135,6 @@ namespace Interfaz
 
         private void OpcionConsultarSaldo()
         {
-            // Implementación pendiente - Salo
             Console.WriteLine("Opción en desarrollo...");
             Console.WriteLine("Presione Enter para continuar...");
             Console.ReadLine();
@@ -153,7 +142,6 @@ namespace Interfaz
 
         private void OpcionDeshacerTransaccion()
         {
-            // Implementación pendiente - Salo
             Console.WriteLine("Opción en desarrollo...");
             Console.WriteLine("Presione Enter para continuar...");
             Console.ReadLine();
@@ -161,7 +149,6 @@ namespace Interfaz
 
         private void OpcionMostrarCola()
         {
-            // Implementación pendiente - Salo
             Console.WriteLine("Opción en desarrollo...");
             Console.WriteLine("Presione Enter para continuar...");
             Console.ReadLine();
@@ -169,7 +156,6 @@ namespace Interfaz
 
         private void OpcionMostrarTotalClientes()
         {
-            // Implementación pendiente - Aleja - Commit 20
             Console.WriteLine("Opción en desarrollo...");
             Console.WriteLine("Presione Enter para continuar...");
             Console.ReadLine();
@@ -177,7 +163,6 @@ namespace Interfaz
 
         private void OpcionMostrarTotalDinero()
         {
-            // Implementación pendiente - Aleja - Commit 20
             Console.WriteLine("Opción en desarrollo...");
             Console.WriteLine("Presione Enter para continuar...");
             Console.ReadLine();

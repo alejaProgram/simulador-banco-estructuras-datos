@@ -2,7 +2,7 @@ using System;
 
 namespace Entidades
 {
-    // TODO: Salo debe implementar esta clase
+
     public enum TipoTransaccion
     {
         Deposito,
@@ -11,7 +11,6 @@ namespace Entidades
 
     public class Transaccion
     {
-        // TODO: Salo debe implementar las propiedades y métodos
         public string NumeroCuenta { get; set; }
         public decimal Monto { get; set; }
         public TipoTransaccion Tipo { get; set; }
