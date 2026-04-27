@@ -2,6 +2,7 @@ using Entidades;
 
 namespace Estructuras
 {
+    // TODO: Salo debe implementar esta clase
     public class PilaTransacciones
     {
         private NodoPila cima;
@@ -18,56 +19,19 @@ namespace Estructuras
 
         public void Apilar(Transaccion transaccion)
         {
-            NodoPila nuevoNodo = new NodoPila(transaccion);
-            nuevoNodo.Siguiente = cima;
-            cima = nuevoNodo;
+            // Implementación pendiente - Salo
         }
 
         public Transaccion Desapilar()
         {
-            if (EstaVacia())
-            {
-                return null;
-            }
-
-            Transaccion transaccion = cima.Transaccion;
-            cima = cima.Siguiente;
-            
-            return transaccion;
+            // Implementación pendiente - Salo
+            return null;
         }
 
         public Transaccion VerUltimaTransaccion()
         {
-            if (EstaVacia())
-            {
-                return null;
-            }
-
-            return cima.Transaccion;
-        }
-
-        public int ContarTransacciones()
-        {
-            int contador = 0;
-            NodoPila actual = cima;
-            
-            while (actual != null)
-            {
-                contador++;
-                actual = actual.Siguiente;
-            }
-            
-            return contador;
-        }
-
-        public void Limpiar()
-        {
-            cima = null;
-        }
-
-        public int Contar()
-        {
-            return ContarTransacciones();
+            // Implementación pendiente - Salo
+            return null;
         }
     }
 }
