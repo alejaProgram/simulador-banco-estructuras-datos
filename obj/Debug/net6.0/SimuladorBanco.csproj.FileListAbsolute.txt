@@ -1,0 +1,15 @@
+C:\Users\Andis\Desktop\simulador-banco-estructuras-datos\bin\Debug\net6.0\SimuladorBanco.exe
+C:\Users\Andis\Desktop\simulador-banco-estructuras-datos\bin\Debug\net6.0\SimuladorBanco.deps.json
+C:\Users\Andis\Desktop\simulador-banco-estructuras-datos\bin\Debug\net6.0\SimuladorBanco.runtimeconfig.json
+C:\Users\Andis\Desktop\simulador-banco-estructuras-datos\bin\Debug\net6.0\SimuladorBanco.dll
+C:\Users\Andis\Desktop\simulador-banco-estructuras-datos\bin\Debug\net6.0\SimuladorBanco.pdb
+C:\Users\Andis\Desktop\simulador-banco-estructuras-datos\obj\Debug\net6.0\SimuladorBanco.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Andis\Desktop\simulador-banco-estructuras-datos\obj\Debug\net6.0\SimuladorBanco.AssemblyInfoInputs.cache
+C:\Users\Andis\Desktop\simulador-banco-estructuras-datos\obj\Debug\net6.0\SimuladorBanco.AssemblyInfo.cs
+C:\Users\Andis\Desktop\simulador-banco-estructuras-datos\obj\Debug\net6.0\SimuladorBanco.csproj.CoreCompileInputs.cache
+C:\Users\Andis\Desktop\simulador-banco-estructuras-datos\obj\Debug\net6.0\SimuladorBanco.sourcelink.json
+C:\Users\Andis\Desktop\simulador-banco-estructuras-datos\obj\Debug\net6.0\SimuladorBanco.dll
+C:\Users\Andis\Desktop\simulador-banco-estructuras-datos\obj\Debug\net6.0\refint\SimuladorBanco.dll
+C:\Users\Andis\Desktop\simulador-banco-estructuras-datos\obj\Debug\net6.0\SimuladorBanco.pdb
+C:\Users\Andis\Desktop\simulador-banco-estructuras-datos\obj\Debug\net6.0\SimuladorBanco.genruntimeconfig.cache
+C:\Users\Andis\Desktop\simulador-banco-estructuras-datos\obj\Debug\net6.0\ref\SimuladorBanco.dll
