@@ -21,26 +21,19 @@ namespace Estructuras
 
         public void Encolar(Cliente cliente)
         {
-        }
+            NodoCola nuevo = new NodoCola(cliente);
 
-        public Cliente Desencolar()
-        {
-            return null;
-        }
-
-        public Cliente VerSiguiente()
-        {
-            return null;
-        }
-
-        public int ContarClientesEnCola()
-        {
-            return 0;
-        }
-
-        public Cliente[] ObtenerClientesEnCola()
-        {
-            return null;
+            if (EstaVacia())
+            {
+                frente = nuevo;
+                final = nuevo;
+            }
+            else
+            {
+                final.Siguiente = nuevo;
+                final = nuevo;
+            }
+       
         }
     }
 }
