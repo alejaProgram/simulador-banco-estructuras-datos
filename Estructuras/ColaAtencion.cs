@@ -33,7 +33,20 @@ namespace Estructuras
                 final.Siguiente = nuevo;
                 final = nuevo;
             }
-       
+        }
+
+        public Cliente Desencolar()
+        {
+            if (EstaVacia())
+            return null;
+
+            Cliente cliente = frente.Cliente;
+            frente = frente.Siguiente;
+
+            if (frente == null)
+                final = null;
+
+                return cliente;
         }
     }
 }
