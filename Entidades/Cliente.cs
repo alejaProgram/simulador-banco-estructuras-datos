@@ -16,5 +16,23 @@ namespace Entidades
             NumeroCuenta = numeroCuenta;
             Saldo = saldoInicial;
         }
+
+        public void Depositar(decimal monto)
+        {
+            if (monto > 0)
+            {
+                Saldo += monto;
+            }
+        }
+
+        public bool Retirar(decimal monto)
+        {
+            if (monto > 0 && Saldo >= monto)
+            {
+                Saldo -= monto;
+                return true;
+            }
+            return false;
+        }
     }
 }
