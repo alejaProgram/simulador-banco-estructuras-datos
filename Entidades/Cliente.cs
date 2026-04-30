@@ -34,5 +34,10 @@ namespace Entidades
             }
             return false;
         }
+
+        public override string ToString()
+        {
+            return $"ID: {Identificacion} | Nombre: {NombreCompleto} | Cuenta: {NumeroCuenta} | Saldo: ${Saldo:F2}";
+        }
     }
 }
