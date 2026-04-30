@@ -48,5 +48,13 @@ namespace Estructuras
 
                 return cliente;
         }
+
+        public Cliente VerSiguiente()
+        {
+            if (EstaVacia())
+                return null;
+
+            return frente.Cliente;
+        }
     }
 }
