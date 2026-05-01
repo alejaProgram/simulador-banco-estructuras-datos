@@ -56,5 +56,18 @@ namespace Estructuras
 
             return frente.Cliente;
         }
+
+        public int ContarClienteEncola()
+        {
+           int contador = 0;
+           NodoCola actual = frente;
+
+           while (actual != null)
+           {
+                contador++;
+                actual = actual.Siguiente;
+            } 
+            return contador;
+        }
     }
 }
