@@ -91,5 +91,22 @@ namespace Estructuras
 
             return clientes;
         }
+
+        public void MostrarCola()
+        {
+            if (EstaVacia())
+            {
+                Console.WriteLine("No hay clientes en la cola");
+                return;
+            }
+
+            NodoCola actual = frente;
+
+            Console.WriteLine("Clientes en la cola: ");
+            {
+                Console.WriteLine("- " + actual.Cliente.Nombre + " | Cuenta: " + actual.Cliente.NumeroCuenta);
+                actual = actual.Siguiente;
+            }
+        }
     }
 }
