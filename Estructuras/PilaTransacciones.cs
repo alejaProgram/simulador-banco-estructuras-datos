@@ -18,16 +18,12 @@ namespace Estructuras
 
         public void Apilar(Transaccion transaccion)
         {
-        }
-
-        public Transaccion Desapilar()
-        {
-            return null;
-        }
-
-        public Transaccion VerUltimaTransaccion()
-        {
-            return null;
+            NodoPila nuevo = new NodoPila(transaccion);
+            
+            nuevo.Siguiente = cima;
+            cima = nuevo;
         }
     }
 }
+
+       
