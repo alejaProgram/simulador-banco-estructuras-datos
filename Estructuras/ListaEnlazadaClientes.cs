@@ -62,7 +62,15 @@ namespace Estructuras
 
         public Cliente BuscarPorCuenta(string numeroCuenta)
         {
-
+            NodoCliente actual = cabeza;
+            while (actual != null)
+            {
+                if (actual.Cliente.NumeroCuenta == numeroCuenta)
+                {
+                    return actual.Cliente;
+                }
+                actual = actual.Siguiente;
+            }
             return null;
         }
 
