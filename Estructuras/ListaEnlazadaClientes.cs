@@ -76,8 +76,7 @@ namespace Estructuras
 
         public bool ExisteCliente(string identificacion, string numeroCuenta)
         {
-  
-            return false;
+            return BuscarPorIdentificacion(identificacion) != null || BuscarPorCuenta(numeroCuenta) != null;
         }
 
         public int ContarClientes()
