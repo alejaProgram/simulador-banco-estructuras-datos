@@ -48,7 +48,15 @@ namespace Estructuras
 
         public Cliente BuscarPorIdentificacion(string identificacion)
         {
-
+            NodoCliente actual = cabeza;
+            while (actual != null)
+            {
+                if (actual.Cliente.Identificacion == identificacion)
+                {
+                    return actual.Cliente;
+                }
+                actual = actual.Siguiente;
+            }
             return null;
         }
 
