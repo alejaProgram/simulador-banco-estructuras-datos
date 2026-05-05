@@ -29,7 +29,21 @@ namespace Estructuras
 
         public void Insertar(Cliente cliente)
         {
+            NodoCliente nuevoNodo = new NodoCliente(cliente);
 
+            if (cabeza == null)
+            {
+                cabeza = nuevoNodo;
+            }
+            else
+            {
+                NodoCliente actual = cabeza;
+                while (actual.Siguiente != null)
+                {
+                    actual = actual.Siguiente;
+                }
+                actual.Siguiente = nuevoNodo;
+            }
         }
 
         public Cliente BuscarPorIdentificacion(string identificacion)
