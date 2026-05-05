@@ -23,6 +23,17 @@ namespace Estructuras
             nuevo.Siguiente = cima;
             cima = nuevo;
         }
+
+         public Transaccion Desapilar()
+        {
+            if (EstaVacia())
+                return null;
+
+            Transaccion t = cima.Transaccion;
+            cima = cima.Siguiente;
+
+            return t;
+        }
     }
 }
 
