@@ -37,8 +37,7 @@ namespace Logica
 
         public Cliente[] ListarClientes()
         {
-
-            return null;
+            return clientes.ObtenerTodosLosClientes();
         }
 
         public int ObtenerTotalClientes()
