@@ -93,8 +93,14 @@ namespace Estructuras
 
         public decimal CalcularTotalDinero()
         {
-
-            return 0;
+            decimal total = 0;
+            NodoCliente actual = cabeza;
+            while (actual != null)
+            {
+                total += actual.Cliente.Saldo;
+                actual = actual.Siguiente;
+            }
+            return total;
         }
 
         public Cliente[] ObtenerTodosLosClientes()
