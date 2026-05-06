@@ -15,8 +15,14 @@ namespace Logica
 
         public bool RegistrarCliente(string identificacion, string nombreCompleto, string numeroCuenta, decimal saldoInicial = 0)
         {
+            if (clientes.ExisteCliente(identificacion, numeroCuenta))
+            {
+                return false;
+            }
 
-            return false;
+            Cliente nuevoCliente = new Cliente(identificacion, nombreCompleto, numeroCuenta, saldoInicial);
+            clientes.Insertar(nuevoCliente);
+            return true;
         }
 
         public Cliente BuscarCliente(string identificacion)
