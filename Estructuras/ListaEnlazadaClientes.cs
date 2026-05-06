@@ -105,8 +105,20 @@ namespace Estructuras
 
         public Cliente[] ObtenerTodosLosClientes()
         {
-  
-            return null;
+            int cantidad = ContarClientes();
+            Cliente[] clientes = new Cliente[cantidad];
+            
+            NodoCliente actual = cabeza;
+            int indice = 0;
+            
+            while (actual != null)
+            {
+                clientes[indice] = actual.Cliente;
+                actual = actual.Siguiente;
+                indice++;
+            }
+            
+            return clientes;
         }
     }
 }
