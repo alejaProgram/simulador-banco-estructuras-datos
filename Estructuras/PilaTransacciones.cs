@@ -34,6 +34,14 @@ namespace Estructuras
 
             return t;
         }
+
+         public Transaccion VerUltima()
+        {
+            if (EstaVacia())
+                return null;
+
+            return cima.Transaccion;
+        }
     }
 }
 
