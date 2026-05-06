@@ -27,8 +27,7 @@ namespace Logica
 
         public Cliente BuscarCliente(string identificacion)
         {
-
-            return null;
+            return clientes.BuscarPorIdentificacion(identificacion);
         }
 
         public Cliente BuscarClientePorCuenta(string numeroCuenta)
