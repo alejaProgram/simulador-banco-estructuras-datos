@@ -42,8 +42,7 @@ namespace Logica
 
         public int ObtenerTotalClientes()
         {
-
-            return 0;
+            return clientes.ContarClientes();
         }
 
         public decimal ObtenerTotalDinero()
