@@ -32,8 +32,7 @@ namespace Logica
 
         public Cliente BuscarClientePorCuenta(string numeroCuenta)
         {
-
-            return null;
+            return clientes.BuscarPorCuenta(numeroCuenta);
         }
 
         public Cliente[] ListarClientes()
