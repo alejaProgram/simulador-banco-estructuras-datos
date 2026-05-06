@@ -81,8 +81,14 @@ namespace Estructuras
 
         public int ContarClientes()
         {
-  
-            return 0;
+            int contador = 0;
+            NodoCliente actual = cabeza;
+            while (actual != null)
+            {
+                contador++;
+                actual = actual.Siguiente;
+            }
+            return contador;
         }
 
         public decimal CalcularTotalDinero()
