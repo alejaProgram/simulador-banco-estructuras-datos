@@ -42,6 +42,25 @@ namespace Estructuras
 
             return cima.Transaccion;
         }
+
+        public void MostrarHistorial()
+        {
+            if(EstaVacia())
+            {
+                Console.WriteLine ("No hay transacciones registrada");
+                return;
+            }
+
+            NodoPila actual = cima;
+
+            Console.WriteLine("Historial de transacciones: ");
+
+            while (actual!= null)
+            {
+                 Console.WriteLine(actual.Transaccion);
+                 actual = actual.Siguiente;
+            }
+        }
     }
 }
 
