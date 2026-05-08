@@ -38,8 +38,10 @@ namespace Estructuras
         public Cliente Desencolar()
         {
             if (EstaVacia())
-            return null;
-
+            {
+                return null;
+            }
+            
             Cliente cliente = frente.Cliente;
             frente = frente.Siguiente;
 
@@ -57,7 +59,7 @@ namespace Estructuras
             return frente.Cliente;
         }
 
-        public int ContarClienteEncola()
+        public int ContarClientesEncola()
         {
            int contador = 0;
            NodoCola actual = frente;
@@ -70,16 +72,16 @@ namespace Estructuras
             return contador;
         }
 
-        public Cliente[] ObtenerClienteEncola()
+        public Cliente[] ObtenerClientesEncola()
         {
-            int cantidad = ContarClienteEncola();
+            int cantidad = ContarClientesEncola();
 
             if (cantidad == 0)
                 return new Cliente[0];
 
             Cliente[] clientes = new Cliente[cantidad];
 
-            NodoCola actual =frente;
+            NodoCola actual = frente;
             int i = 0;
 
             while (actual != null)
@@ -103,8 +105,11 @@ namespace Estructuras
             NodoCola actual = frente;
 
             Console.WriteLine("Clientes en la cola: ");
+
+            while (actual != null)
             {
                 Console.WriteLine("- " + actual.Cliente.Nombre + " | Cuenta: " + actual.Cliente.NumeroCuenta);
+
                 actual = actual.Siguiente;
             }
         }
