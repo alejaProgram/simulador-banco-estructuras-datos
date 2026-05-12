@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Andis\\Desktop\\simulador-banco-estructuras-datos\\SimuladorBanco.csproj": {}
+    "C:\\Users\\salof\\Downloads\\simulador-banco-estructuras-datos\\SimuladorBanco.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Andis\\Desktop\\simulador-banco-estructuras-datos\\SimuladorBanco.csproj": {
+    "C:\\Users\\salof\\Downloads\\simulador-banco-estructuras-datos\\SimuladorBanco.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andis\\Desktop\\simulador-banco-estructuras-datos\\SimuladorBanco.csproj",
+        "projectUniqueName": "C:\\Users\\salof\\Downloads\\simulador-banco-estructuras-datos\\SimuladorBanco.csproj",
         "projectName": "SimuladorBanco",
-        "projectPath": "C:\\Users\\Andis\\Desktop\\simulador-banco-estructuras-datos\\SimuladorBanco.csproj",
-        "packagesPath": "C:\\Users\\Andis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andis\\Desktop\\simulador-banco-estructuras-datos\\obj\\",
+        "projectPath": "C:\\Users\\salof\\Downloads\\simulador-banco-estructuras-datos\\SimuladorBanco.csproj",
+        "packagesPath": "C:\\Users\\salof\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\salof\\Downloads\\simulador-banco-estructuras-datos\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Andis\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\salof\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -44,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net6.0": {
@@ -83,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
