@@ -89,5 +89,18 @@ namespace Estructuras
             
             return clientes;
         }
+
+        public bool ContieneClienteConIdentificacion(string identificacion)
+        {
+            NodoCola? actual = frente;
+            while (actual != null)
+            {
+                if (actual.Cliente.Identificacion == identificacion)
+                    return true;
+                actual = actual.Siguiente;
+            }
+
+            return false;
+        }
     }
 }

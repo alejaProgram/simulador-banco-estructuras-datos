@@ -1,4 +1,5 @@
 using System;
+using Validacion;
 
 namespace Entidades
 {
@@ -37,7 +38,7 @@ namespace Entidades
 
         public override string ToString()
         {
-            return $"ID: {Identificacion} | Nombre: {NombreCompleto} | Cuenta: {NumeroCuenta} | Saldo: ${Saldo:F2}";
+            return $"ID: {Identificacion} | Nombre: {NombreCompleto} | Cuenta: {NumeroCuenta} | Saldo: {ValidacionesSistema.FormatearMonedaCOP(Saldo)}";
         }
     }
 }

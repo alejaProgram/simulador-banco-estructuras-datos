@@ -1,5 +1,6 @@
 using System;
 using Interfaz;
+using Logica;
 
 namespace SimuladorBanco
 {
@@ -7,7 +8,7 @@ namespace SimuladorBanco
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("=== SIMULADOR BANCARIO - ESTRUCTURAS DE DATOS ===");
+            Console.WriteLine($"=== {Banco.NombreBanco} — SIMULADOR BANCARIO ===");
             Console.WriteLine("Proyecto Final - Estructuras de Datos");
             Console.WriteLine();
             

@@ -1,4 +1,5 @@
 using System;
+using Validacion;
 
 namespace Entidades
 {
@@ -31,7 +32,7 @@ namespace Entidades
         public override string ToString()
         {
             string tipoStr = Tipo == TipoTransaccion.Deposito ? "DEPÓSITO" : "RETIRO";
-            return $"{Fecha:dd/MM/yyyy HH:mm:ss} | Cuenta: {NumeroCuenta} | {tipoStr}: ${Monto:F2} | Saldo: ${SaldoAnterior:F2} -> ${SaldoNuevo:F2}";
+            return $"{Fecha:dd/MM/yyyy HH:mm:ss} | Cuenta: {NumeroCuenta} | {tipoStr}: {ValidacionesSistema.FormatearMonedaCOP(Monto)} | Saldo: {ValidacionesSistema.FormatearMonedaCOP(SaldoAnterior)} -> {ValidacionesSistema.FormatearMonedaCOP(SaldoNuevo)}";
         }
     }
 }

@@ -1,10 +1,13 @@
 using Entidades;
 using Estructuras;
+using Validacion;
 
 namespace Logica
 {
     public class Banco
     {
+        public const string NombreBanco = "DAVIVIENDA";
+
         private ListaEnlazadaClientes clientes;
         private ColaAtencion colaAtencion;
         private PilaTransacciones historialTransacciones;
@@ -18,14 +21,36 @@ namespace Logica
 
         public bool RegistrarCliente(string identificacion, string nombreCompleto, string numeroCuenta, decimal saldoInicial = 0)
         {
-            if (clientes.ExisteCliente(identificacion, numeroCuenta))
+            if (!ValidacionesSistema.EsCedulaValida(identificacion, out string idNormalizado, out _))
             {
                 return false;
             }
 
-            Cliente nuevoCliente = new Cliente(identificacion, nombreCompleto, numeroCuenta, saldoInicial);
+            if (!ValidacionesSistema.EsNumeroCuentaValido(numeroCuenta, out _))
+            {
+                return false;
+            }
+
+            numeroCuenta = numeroCuenta.Trim();
+
+            if (clientes.ExisteCliente(idNormalizado, numeroCuenta))
+            {
+                return false;
+            }
+
+            Cliente nuevoCliente = new Cliente(idNormalizado, nombreCompleto, numeroCuenta, saldoInicial);
             clientes.Insertar(nuevoCliente);
             return true;
+        }
+
+        public bool ExisteClienteConIdentificacion(string identificacion)
+        {
+            return BuscarCliente(identificacion) != null;
+        }
+
+        public bool ExisteClienteConNumeroCuenta(string numeroCuenta)
+        {
+            return BuscarClientePorCuenta(numeroCuenta) != null;
         }
 
         public Cliente? BuscarCliente(string identificacion)
@@ -53,16 +78,21 @@ namespace Logica
             return clientes.CalcularTotalDinero();
         }
 
-        public bool AgregarClienteACola(string identificacion)
+        public ResultadoEncolarCliente AgregarClienteACola(string identificacion)
         {
-            Cliente cliente = BuscarCliente(identificacion);
+            Cliente? cliente = BuscarCliente(identificacion);
             if (cliente == null)
             {
-                return false;
+                return ResultadoEncolarCliente.ClienteNoExiste;
             }
-            
+
+            if (colaAtencion.ContieneClienteConIdentificacion(identificacion))
+            {
+                return ResultadoEncolarCliente.YaEstaEnCola;
+            }
+
             colaAtencion.Encolar(cliente);
-            return true;
+            return ResultadoEncolarCliente.Exito;
         }
 
         public Cliente? AtenderSiguienteCliente()
@@ -85,15 +115,29 @@ namespace Logica
             return colaAtencion.ObtenerClientesEnCola();
         }
 
-        public bool RealizarDeposito(string numeroCuenta, decimal monto)
+        public bool RealizarDeposito(string numeroCuenta, decimal monto, out Transaccion? transaccionRegistrada)
         {
+            transaccionRegistrada = null;
+
+            if (!ValidacionesSistema.EsNumeroCuentaValido(numeroCuenta, out _))
+            {
+                return false;
+            }
+
+            numeroCuenta = numeroCuenta.Trim();
+
             if (monto <= 0)
             {
                 return false;
             }
 
-            Cliente cliente = BuscarClientePorCuenta(numeroCuenta);
+            Cliente? cliente = BuscarClientePorCuenta(numeroCuenta);
             if (cliente == null)
+            {
+                return false;
+            }
+
+            if (!ValidacionesSistema.SaldoResultanteValidoTrasDeposito(cliente.Saldo, monto, out _))
             {
                 return false;
             }
@@ -104,19 +148,34 @@ namespace Logica
 
             Transaccion transaccion = new Transaccion(numeroCuenta, monto, TipoTransaccion.Deposito, saldoAnterior, saldoNuevo);
             historialTransacciones.Apilar(transaccion);
+            transaccionRegistrada = transaccion;
 
             return true;
         }
 
-        public bool RealizarRetiro(string numeroCuenta, decimal monto)
+        public bool RealizarRetiro(string numeroCuenta, decimal monto, out Transaccion? transaccionRegistrada)
         {
+            transaccionRegistrada = null;
+
+            if (!ValidacionesSistema.EsNumeroCuentaValido(numeroCuenta, out _))
+            {
+                return false;
+            }
+
+            numeroCuenta = numeroCuenta.Trim();
+
             if (monto <= 0)
             {
                 return false;
             }
 
-            Cliente cliente = BuscarClientePorCuenta(numeroCuenta);
+            Cliente? cliente = BuscarClientePorCuenta(numeroCuenta);
             if (cliente == null)
+            {
+                return false;
+            }
+
+            if (!ValidacionesSistema.HaySaldoSuficiente(cliente.Saldo, monto, out _))
             {
                 return false;
             }
@@ -133,6 +192,7 @@ namespace Logica
 
             Transaccion transaccion = new Transaccion(numeroCuenta, monto, TipoTransaccion.Retiro, saldoAnterior, saldoNuevo);
             historialTransacciones.Apilar(transaccion);
+            transaccionRegistrada = transaccion;
 
             return true;
         }
@@ -145,7 +205,7 @@ namespace Logica
                 return null;
             }
 
-            Cliente cliente = BuscarClientePorCuenta(transaccion.NumeroCuenta);
+            Cliente? cliente = BuscarClientePorCuenta(transaccion.NumeroCuenta);
             if (cliente == null)
             {
                 return transaccion;
