@@ -103,21 +103,6 @@ namespace Estructuras
             return total;
         }
 
-        public Cliente[] ObtenerTodos()
-        {
-            return ObtenerTodosLosClientes();
-        }
-
-        public Cliente Buscar(string criterio)
-        {
-            return BuscarPorIdentificacion(criterio);
-        }
-
-        public bool Existe(string criterio)
-        {
-            return Buscar(criterio) != null;
-        }
-
         public Cliente[] ObtenerTodosLosClientes()
         {
             int cantidad = ContarClientes();
