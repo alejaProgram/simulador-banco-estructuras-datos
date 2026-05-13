@@ -5,8 +5,8 @@ namespace Estructuras
 {
     public class ColaAtencion
     {
-        private NodoCola frente;
-        private NodoCola final;
+        private NodoCola? frente;
+        private NodoCola? final;
 
         public ColaAtencion()
         {
@@ -21,26 +21,73 @@ namespace Estructuras
 
         public void Encolar(Cliente cliente)
         {
+            NodoCola nuevoNodo = new NodoCola(cliente);
+            
+            if (frente == null)
+            {
+                frente = nuevoNodo;
+                final = nuevoNodo;
+            }
+            else
+            {
+                final!.Siguiente = nuevoNodo;
+                final = nuevoNodo;
+            }
         }
 
-        public Cliente Desencolar()
+        public Cliente? Desencolar()
         {
-            return null;
+            if (frente == null)
+            {
+                return null;
+            }
+            
+            Cliente cliente = frente.Cliente;
+            frente = frente.Siguiente;
+            
+            if (frente == null)
+            {
+                final = null;
+            }
+            
+            return cliente;
         }
 
-        public Cliente VerSiguiente()
+        public Cliente? VerSiguiente()
         {
-            return null;
+            return frente?.Cliente;
         }
 
         public int ContarClientesEnCola()
         {
-            return 0;
+            int contador = 0;
+            NodoCola? actual = frente;
+            
+            while (actual != null)
+            {
+                contador++;
+                actual = actual.Siguiente;
+            }
+            
+            return contador;
         }
 
         public Cliente[] ObtenerClientesEnCola()
         {
-            return null;
+            int cantidad = ContarClientesEnCola();
+            Cliente[] clientes = new Cliente[cantidad];
+            
+            NodoCola? actual = frente;
+            int indice = 0;
+            
+            while (actual != null)
+            {
+                clientes[indice] = actual.Cliente;
+                actual = actual.Siguiente;
+                indice++;
+            }
+            
+            return clientes;
         }
     }
 }

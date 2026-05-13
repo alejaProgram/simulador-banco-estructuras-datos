@@ -4,7 +4,7 @@ namespace Estructuras
 {
     public class PilaTransacciones
     {
-        private NodoPila cima;
+        private NodoPila? cima;
 
         public PilaTransacciones()
         {
@@ -18,16 +18,27 @@ namespace Estructuras
 
         public void Apilar(Transaccion transaccion)
         {
+            NodoPila nuevoNodo = new NodoPila(transaccion);
+            nuevoNodo.Siguiente = cima;
+            cima = nuevoNodo;
         }
 
-        public Transaccion Desapilar()
+        public Transaccion? Desapilar()
         {
-            return null;
+            if (cima == null)
+            {
+                return null;
+            }
+            
+            Transaccion transaccion = cima.Transaccion;
+            cima = cima.Siguiente;
+            
+            return transaccion;
         }
 
-        public Transaccion VerUltimaTransaccion()
+        public Transaccion? VerUltimaTransaccion()
         {
-            return null;
+            return cima?.Transaccion;
         }
     }
 }

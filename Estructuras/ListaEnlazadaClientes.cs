@@ -5,7 +5,7 @@ namespace Estructuras
 {
     public class ListaEnlazadaClientes
     {
-        private NodoCliente cabeza;
+        private NodoCliente? cabeza;
 
         public ListaEnlazadaClientes()
         {
@@ -46,9 +46,9 @@ namespace Estructuras
             }
         }
 
-        public Cliente BuscarPorIdentificacion(string identificacion)
+        public Cliente? BuscarPorIdentificacion(string identificacion)
         {
-            NodoCliente actual = cabeza;
+            NodoCliente? actual = cabeza;
             while (actual != null)
             {
                 if (actual.Cliente.Identificacion == identificacion)
@@ -60,9 +60,9 @@ namespace Estructuras
             return null;
         }
 
-        public Cliente BuscarPorCuenta(string numeroCuenta)
+        public Cliente? BuscarPorCuenta(string numeroCuenta)
         {
-            NodoCliente actual = cabeza;
+            NodoCliente? actual = cabeza;
             while (actual != null)
             {
                 if (actual.Cliente.NumeroCuenta == numeroCuenta)
@@ -82,7 +82,7 @@ namespace Estructuras
         public int ContarClientes()
         {
             int contador = 0;
-            NodoCliente actual = cabeza;
+            NodoCliente? actual = cabeza;
             while (actual != null)
             {
                 contador++;
@@ -94,7 +94,7 @@ namespace Estructuras
         public decimal CalcularTotalDinero()
         {
             decimal total = 0;
-            NodoCliente actual = cabeza;
+            NodoCliente? actual = cabeza;
             while (actual != null)
             {
                 total += actual.Cliente.Saldo;
@@ -108,7 +108,7 @@ namespace Estructuras
             int cantidad = ContarClientes();
             Cliente[] clientes = new Cliente[cantidad];
             
-            NodoCliente actual = cabeza;
+            NodoCliente? actual = cabeza;
             int indice = 0;
             
             while (actual != null)
