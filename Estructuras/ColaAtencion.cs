@@ -72,26 +72,9 @@ namespace Estructuras
             return contador;
         }
 
-        public Cliente[] ObtenerClienteEncola()
+        public NodoCola ObtenerClienteEncola()
         {
-            int cantidad = ContarClienteEncola();
-
-            if (cantidad == 0)
-                return new Cliente[0];
-
-            Cliente[] clientes = new Cliente[cantidad];
-
-            NodoCola actual = frente;
-            int i = 0;
-
-            while (actual != null)
-            {
-                clientes[i] = actual.Cliente;
-                actual = actual.Siguiente;
-                i++;
-            }
-
-            return clientes;
+            return frente;
         }
 
         public void MostrarCola()
